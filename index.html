@@ -8,9 +8,16 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model.number="number1"> + 
-        <input type="text" v-model.number="number2"> =
-        {{ number1 + number2 }}
+        <input type="number" v-model.number="number1">
+        <select v-model="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>       
+        <input type="text" v-model.number="number2">
+        <button @click="Calculate">=</button>
+        {{ result }}
     </div>
     <script src="index.js"></script>
 </body>
